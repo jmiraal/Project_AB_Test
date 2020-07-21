@@ -48,7 +48,7 @@ The users are devided in two groups: `control` and `treatment`. The `new_page` i
 We have saved the result in the dataframe `df`.
 
 
-The proccess followed in this work was guided by the Udacity requirementes expecified in the Notebook. Normally, we were asked a number of questions that we needed to answer. This makes difficult to do a summary. We are going to expose all the questions we were asked with the correspondent answeres and results of the analysis without entering in the code part. To see this take a look to the notebook of the project.
+The proccess followed in this work was guided by the Udacity requirements expecified in the Notebook. Normally, we were asked a number of questions that we needed to answer. This makes difficult to do a summary. We are going to expose all the questions we were asked with the correspondent answeres and results of the analysis without entering in the code part. To see this take a look to the notebook of the project.
 
 <a id='part_1'></a>
 ## Part I - Probability
@@ -97,10 +97,7 @@ One alternative is to evaluate the difference between the converted rates: *p<su
 
 If it is negative or equal to 0 it means that the old page would be a better option. This will be the null hypothesis (H<sub>0</sub>). Otherwise, we should choose the new page, this would be the alternative hypothesis (H<sub>1</sub>)
 
-$$H_0: p_{new} - p_{old} \leq 0$$
-
-
-$$H_1: p_{new} - p_{old} > 0$$
+![](pictures/hypotesis_test_1.png)
 
 
 To decide wether the time of observation is enough or not it can be helpful to check how many days the test has been running and if there has been an evolution along these days. We have checked that the data has been stored for 23 days.
@@ -191,23 +188,15 @@ Then, the function proportions_ztest calulates the the two samples z-score for t
 The z-score measures how far the difference is from the null hypothesis. It measures how far, in Standar Errors, our difference is from the expected hypothesis null (null limit: the difference is equal to zero).
 
 
-$$ z= {\text{Observed difference - Expected difference} \over \text{SE for difference}}$$
-
-$$ z= {{(\bar{X_1}-\bar{X_2})-(\mu_1-\mu_2)} \over {\sqrt{\sigma_\bar{X_1}^2+\sigma_\bar{X_2}^2}}}$$
-
-$$\text{Where: }(\mu_1-\mu_2) = 0 \text{  , because we are suposing the null hypothesis.}$$
-
-$$z={{(\bar{X_1}-\bar{X_2})} \over {\sqrt{{\sigma_1^2}/n_1+{\sigma_2^2}/n_2}}}$$
+![](pictures/z_score_definition.png)
 
 
 This formulas have been extracted from:http://www.stat.ucla.edu/~cochran/stat10/winter/lectures/lect21.html
 
 Finally the value saved in pval tell us the proportion of z-scores greater than the value saved in stat in the z-score distribution. In this case is greater because we have selected altenative="larger" and we have done that because we have decided that our hypthesis are:
 
-$$H_0: \mu_{new} - \mu_{old} \leq 0$$
 
-
-$$H_1: \mu_{new} - \mu_{old} > 0$$
+![](pictures/hypotesis_test_2.png)
 
 This method is faster because we only have to calculate the z-score. Then, as the z-score distribution is a gaussian function, the calculation of the proportion of values greater than z-score is very quick and easy with a computer.
 
@@ -256,10 +245,7 @@ The probability of converted = True if ab_page = old_page if we don't take into 
 
 In this case the p-value measures the statistical significance of the coefficient asociated with the ab_page column. It gives us an idea of how relevant is the statistical significance for the relationship between the variable response and the page of the group. In this case the null and alternative hypothesis are different from the hypothesis in Part II:
 
-$$H_0: \beta_1 = 0$$
-
-
-$$H_1: \beta_1 \neq 0$$
+![](pictures/hypotesis_test_3.png)
 
 The p-value is different here because, according the hypothesis, we are considering a two sided case. If we had excuted the function proportions_ztest with alternative='two_sided', the results would have been the same. 
 
