@@ -112,28 +112,28 @@ We have drawn a plot with the difference between the mean of conversions in the 
 Maybe we can leave the test more time anyway to see if the people change their behavior, but so far the results are quite stable. These sesults tend also to be negative, which means that there is a bigger rate of conversión in the control group.
 
 
->`2.` Assume under the null hypothesis, $p_{new}$ and $p_{old}$ both have "true" success rates equal to the **converted** success rate regardless of page - that is $p_{new}$ and $p_{old}$ are equal. Furthermore, assume they are equal to the **converted** rate in **ab_data.csv** regardless of the page. <br><br> Use a sample size for each page equal to the ones in **ab_data.csv**.  <br><br> Perform the sampling distribution for the difference in **converted** between the two pages over 10,000 iterations of calculating an estimate from the null.  <br><br>
+>`2.` Assume under the null hypothesis, p<sub>new</sub> and p<sub>old</sub> both have "true" success rates equal to the **converted** success rate regardless of page - that is p<sub>new</sub> and p<sub>old</sub> are equal. Furthermore, assume they are equal to the **converted** rate in **ab_data.csv** regardless of the page. <br><br> Use a sample size for each page equal to the ones in **ab_data.csv**.  <br><br> Perform the sampling distribution for the difference in **converted** between the two pages over 10,000 iterations of calculating an estimate from the null.  <br><br>
 
 
-a. What is the **convert rate** for $p_{new}$ under the null?  **0.1196**
+a. What is the **convert rate** for p<sub>new</sub> under the null?  **0.1196**
 
-b. What is the **convert rate** for $p_{old}$ under the null? **0.1196**
+b. What is the **convert rate** for p<sub>old</sub> under the null? **0.1196**
 
-c. What is $n_{new}$? **145310**
+c. What is n<sub>new</sub>? **145310**
 
-d. What is $n_{old}$? **145274**
+d. What is n<sub>old</sub>? **145274**
 
-e. Simulate $n_{new}$ transactions with a convert rate of $p_{new}$ under the null.  Store these $n_{new}$ 1's and 0's in **new_page_converted**.
+e. Simulate n<sub>new</sub> transactions with a convert rate of p<sub>new</sub> under the null.  Store these n<sub>new</sub> 1's and 0's in **new_page_converted**.
 
-We have used the function np.random.binomial with p = $p_{new}$ and the number of samples equal to $n_{new}$.
+We have used the function np.random.binomial with p = p<sub>new</sub> and the number of samples equal to n<sub>new</sub>.
 
-f. Simulate $n_{old}$ transactions with a convert rate of $p_{old}$ under the null.  Store these $n_{old}$ 1's and 0's in **old_page_converted**.
+f. Simulate n<sub>old</sub> transactions with a convert rate of p<sub>old</sub> under the null.  Store these n<sub>old</sub> 1's and 0's in **old_page_converted**.
 
-We have applied the same procedure with p = $p_{old}$ and the number of samples equal to $n_{old}$.
+We have applied the same procedure with p = p<sub>old</sub> and the number of samples equal to n<sub>old</sub>.
 
-g. Find $p_{new}$ - $p_{old}$ for your simulated values from part (e) and (f). **0.00036270219122583325**
+g. Find p<sub>new</sub> - p<sub>old</sub> for your simulated values from part (e) and (f). **0.00036270219122583325**
 
-h. Simulate 10,000 $p_{new}$ - $p_{old}$ values using this same process similarly to the one you calculated in parts **a. through g.** above.  Store all 10,000 values in a numpy array called **p_diffs**.
+h. Simulate 10,000 p<sub>new</sub> - p<sub>old</sub> values using this same process similarly to the one you calculated in parts **a. through g.** above.  Store all 10,000 values in a numpy array called **p_diffs**.
 
 We have made a loop with 10.000 iterations. The resutl was a list **p_diffs** with 10.000 values.
 
